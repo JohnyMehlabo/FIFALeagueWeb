@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-z)@f(i3vi93xvdfg4s8s(u6oc7kkhan_^%mz(ak-xwnvtj3jma
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'fifaleagueweb.wsgi.application'
+WSGI_APPLICATION = 'fifaleagueweb.wsgi.app'
 
 
 # Database
