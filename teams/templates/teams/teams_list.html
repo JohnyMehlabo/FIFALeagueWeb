@@ -1,0 +1,10 @@
+{% extends "teams/_base.html" %}
+
+{% block content %}
+<h1 class="pb-3">Equipos:</h1>
+<ul class="list-group">
+{% for team in teams %}
+<li class="list-group-item fs-4"><a class="text-black hover-white text-decoration-none" href="{{team.id}}">{{ team.name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock  %}

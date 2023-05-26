@@ -1,0 +1,14 @@
+{% extends "teams/_base.html" %}
+
+{% block content %}
+<h1 class="font-weight-bold fw-bolder">{{ team_name|upper }}</h1>
+<div class="mx-4">
+    <h3>Dueño: {{ owner }}</h2>
+    <h4>Jugadores:  </h2>
+    <ul class="list-group mx-3 mb-2">
+        {% for player in players %}  
+            <li class="list-group-item">{{player.name}}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock  %}

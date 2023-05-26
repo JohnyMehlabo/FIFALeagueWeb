@@ -10,11 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,8 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'teams'
+    'teams.apps.TeamsConfig',
+    'bootstrap5'
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,7 +75,16 @@ WSGI_APPLICATION = 'fifaleagueweb.wsgi.app'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {}
+DATABASES = {
+    "default" : {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "verceldb",
+        'USER': "default",
+        'PASSWORD': "aGR0JK7gvmIs",
+        'HOST': "ep-little-art-159640-pooler.us-east-1.postgres.vercel-storage.com",
+        'PORT': '5432',
+    }
+}
 
 
 # Password validation
@@ -94,6 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
 
 
 # Internationalization
