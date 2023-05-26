@@ -1,14 +1,14 @@
 {
     "builds": [
         {
-        "src": "fifaleagueweb/fifaleagueweb/wsgi.py",
+        "src": "fifaleagueweb/wsgi.py",
         "use": "@vercel/python"
         }
     ],
     "routes": [
         {
         "src": "/(.*)",
-        "dest": "fifaleagueweb/fifaleagueweb/wsgi.py"
+        "dest": "fifaleagueweb/wsgi.py"
         }
     ]
 }
