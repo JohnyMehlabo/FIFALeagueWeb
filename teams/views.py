@@ -14,7 +14,10 @@ def team_view(request, team_id):
     context = {
         "owner" : team.team_owner,
         "team_name" : team.name,
-        "players" : team.players.all
+        "defenders" : team.players.filter(position="Defensa"),
+        "atackers" : team.players.filter(position="Atacante"),
+        "midfielders" : team.players.filter(position="Mediocentro"),
+        "goalkeepers" : team.players.filter(position="Portero")
     }
 
     return render(request, "teams/team.html", context)

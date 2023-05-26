@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'teams.apps.TeamsConfig',
-    'bootstrap5'
+    'bootstrap5',
+    'django_bootstrap_icons'
 ]
 
 
