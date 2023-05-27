@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.index),
     path('teams/', include("teams.urls")),
     path("admin/", admin.site.urls),
+    path('cards/', include("cards.urls"))
 ]

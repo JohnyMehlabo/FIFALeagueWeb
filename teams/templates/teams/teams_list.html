@@ -5,7 +5,10 @@
 <h1 class="pb-3">Equipos:</h1>
 <ul class="list-group">
 {% for team in teams %}
-<li class="list-group-item fs-4"><a class="text-black hover-white text-decoration-none d-flex align-items-center" href="{{team.id}}"><img style="width:75px; margin-right: 24px;" src={% static team.image_name %}><p>{{ team.name }}</p></a></li>
+<li class="list-group-item fs-4"><a class="text-black hover-white text-decoration-none d-flex align-items-center" href="{{team.id}}">
+    <img style="width:75px; margin-right: 24px;" src={% static "badges/"|add:team.image_name %}>
+    <p>{{ team.name }}</p>
+</a></li>
 {% endfor %}
 </ul>
 {% endblock  %}

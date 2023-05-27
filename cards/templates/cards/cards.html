@@ -1,0 +1,15 @@
+{% extends 'teams/_base.html' %}
+
+{% block content %}
+{% load static %}
+<h1 style="font-size:75px">Cartas</h1>
+<div class="d-flex flex-wrap justify-content-center">
+    {% for card in cards %}
+    <div style="flex: 1 0 18%" class="d-flex justify-content-bottom flex-column align-items-center text-center p-4">
+        <img style="width:80%" class="mb-2" src={% static "cards/"|add:card.image_name %}>
+        <h3>{{ card.name }}</h3>
+        <p style="word-wrap: break-word;">{{ card.description }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 <div class="d-flex flex-row justify-content-center align-items-center gap-4">
-    <img src={% static image_name %}>
+    <img class="image-responsive image-fluid" src={% static "badges/"|add:image_name %}>
     <h1 class="font-weight-bold fw-bolder">{{ team_name|upper }}</h1>
 </div>
 <div class="mx-4">
