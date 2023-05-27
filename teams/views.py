@@ -12,6 +12,7 @@ def index(request):
 def team_view(request, team_id):
     team = Team.objects.get(id=team_id)
     context = {
+        "image_name"  :  team.image_name,
         "owner" : team.team_owner,
         "team_name" : team.name,
         "defenders" : team.players.filter(position="Defensa"),
