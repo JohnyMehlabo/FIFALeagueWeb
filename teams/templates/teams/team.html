@@ -8,29 +8,29 @@
 <div class="mx-4">
     <h3>Dueño: {{ owner }}</h2>
     <h4>Jugadores:  </h2>
-        <div class="d-flex flex-row justify-content-center">
-            <ul class="list-group flex-fill m-2">
+        <div class="d-flex flex-row flex-wrap justify-content-center">
+            <ul style="flex: 0 1 23%" class="list-group m-2">
                 <li class="list-group-item fw-bold active">Porteros:</li>
                 {% for player in goalkeepers %}  
                     <li class="list-group-item">{{ player.name }}</li>
                 {% endfor %}
             </ul>
-            <ul class="list-group flex-fill m-2">
+            <ul style="flex: 0 1 23%" class="list-group m-2">
                 <li class="list-group-item fw-bold active">Defensas:</li>
                 {% for player in defenders %}  
                     <li class="list-group-item">{{ player.name }}</li>
                 {% endfor %}
             </ul>
-            <ul class="list-group flex-fill m-2 ">
+            <ul style="flex: 0 1 23%" class="list-group m-2 ">
                 <li class="list-group-item fw-bold active">Mediocentros:</li>
                 {% for player in midfielders %}  
-                    <li class="list-group-item">{{ player.name }}</li>
+                    <li class="list-group-item">{{ player.name }} - {{ player.scored_goals }}</li>
                 {% endfor %}
             </ul>
-            <ul class="list-group flex-fill m-2 ">
+            <ul style="flex: 0 1 23%" class="list-group m-2 ">
                 <li class="list-group-item fw-bold active">Atacantes:</li>
                 {% for player in atackers %}  
-                    <li class="list-group-item">{{ player.name }}</li>
+                    <li class="list-group-item">{{ player.name }} - {{ player.scored_goals }}</li>
                 {% endfor %}
             </ul>
         </div>
