@@ -22,3 +22,10 @@ def team_view(request, team_id):
     }
 
     return render(request, "teams/team.html", context)
+
+def player_view(request, player_id):
+    player = Player.objects.get(id=player_id)
+    context = {
+        "player" : player
+    }
+    return render(request, "teams/player.html", context)

@@ -1,0 +1,39 @@
+{% extends 'teams/_base.html' %}
+
+{% block content %}
+<h1 class="fw-bold">{{ player.name }} - 
+
+    <span class="px-2 text-white"
+    {% if player.fifa_rating >= 90 %}
+        style="background-color :  #239454"
+    {% elif  player.fifa_rating >= 80 %}
+        style="background-color : #8DC153"
+    {% elif  player.fifa_rating >= 66 %}
+        style="background-color : #F6BB43"
+    {% else %}
+        style="background-color : #E77E23"
+    {% endif %}
+    >{{ player.fifa_rating }}</span>
+
+</h1>
+<h2 class="mb-3 mt-0">Posiciones: 
+    {% for position in player.exact_positions %}
+        {% if forloop.first %}
+            <span>{{position}}</span>
+        {% else %}
+            <span>/ {{position}}</span>
+        {% endif %}
+        
+    {% endfor %}
+    
+</h2>
+<h3>Estadísticas:</h2>
+<div class="mx-3">  
+    <h4>⚽ Goles: {{player.scored_goals}}</h2>
+    <h4>🤝 Asistencias: {{player.assists}}</h2>
+    <h4>🏆 MVPs: {{player.times_mvp}}</h4>
+    {% if player.position == "Portero" %}
+    <h4>🧤 Paradas: {{player.saves}} </h4>
+    {% endif %}
+</div>
+{% endblock  %}
