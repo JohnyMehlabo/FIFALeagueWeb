@@ -1,7 +1,11 @@
 {% extends 'teams/_base.html' %}
 
 {% block content %}
-<h1 class="fw-bold">{{ player.name }} - 
+<h1 class="fw-bold">
+    {% if user.is_superuser %}
+    #{{player.id}}
+    {% endif %}
+    {{ player.name }} - 
 
     <span class="px-2 text-white"
     {% if player.fifa_rating >= 90 %}
