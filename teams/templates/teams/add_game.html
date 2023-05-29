@@ -1,0 +1,29 @@
+{% extends 'teams/_base.html' %}
+
+{% block content %}
+{% load static %}
+<script src={% static 'js/add_game.js' %}></script>
+
+<form action="/teams/add_game" method="post" id="events_form">
+    {% csrf_token %}
+    <!-- MVP Select -->
+
+    <label class="fs-3">MVP:</label>
+    <select name="mvp" id="player-select" class="form-control">
+    {% for player in players %}
+        <option>{{ player.name }}</option>
+        {% endfor %}
+    </select>                
+
+    <h2 class="mt-2">Eventos:</h2>
+    <input type="submit" class="mb-5" value="Actualizar">
+</form>
+
+<div class="col-md-4 mb-1">
+    <select class="form-control" id="event-type-selector">
+        <option value=1>Parada</option>
+        <option value=2>Gol</option>
+    </select>
+</div>
+<button class="btn btn-primary" onclick="add_event()">Añadir evento</button>
+{% endblock %}

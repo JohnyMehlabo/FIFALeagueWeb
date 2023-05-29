@@ -39,6 +39,11 @@
                 <li class="nav-item">
                   <a class="nav-link text-white fs-5" href="/cards">Cartas</a>
                 </li>
+                {% if user.is_superuser %}
+                  <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="/teams/add_game">Actualizar con partido</a>
+                  </li>
+                {% endif %}
             </div>
           </div>
         
