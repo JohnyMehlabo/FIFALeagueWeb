@@ -34,6 +34,29 @@ def player_view(request, player_id):
     return render(request, "teams/player.html", context)
 
 @login_required
+def player_exchange(request):
+    if request.user.is_superuser:
+        if request.method == "GET":
+            context = {
+                "players" : Player.objects.all().order_by("name")
+            }
+            return render(request, "teams/exchange_players.html", context)
+        else:
+            player_1 = Player.objects.get(name=request.POST["player-1"])
+            player_2 = Player.objects.get(name=request.POST["player-2"])
+
+            team_1 = player_1.team_set.all()[0]
+            team_2 = player_2.team_set.all()[0]
+
+            player_1.team_set.set([team_2])
+            player_2.team_set.set([team_1])
+
+            player_1.save()
+            player_2.save()
+            return redirect("/")
+            
+
+@login_required
 def update_with_game_view(request):
     if request.user.is_superuser:
         if request.method == "GET":

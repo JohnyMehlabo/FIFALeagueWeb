@@ -1,0 +1,21 @@
+{% extends "teams/_base.html" %}
+
+{% block content %}
+{% load static %}
+<form action="/teams/exchange_players" method="post">
+    {% csrf_token %}
+    <label class="fs-3">Player 1:</label>
+        <select name="player-1" id="player-select" class="form-control">
+        {% for player in players %}
+            <option>{{ player.name }}</option>
+            {% endfor %}
+        </select>    
+        <label class="fs-3">Player 2:</label>
+        <select name="player-2" id="player-select" class="form-control">
+        {% for player in players %}
+            <option>{{ player.name }}</option>
+            {% endfor %}
+        </select>    
+        <input type="submit" class="mb-5" value="Actualizar">
+    </form>
+{% endblock  %}
