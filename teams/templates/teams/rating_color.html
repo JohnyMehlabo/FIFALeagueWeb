@@ -1,0 +1,13 @@
+<span class="px-2 text-white"
+{% if value >= 90 %}
+        style="background-color :  #239454"
+    {% elif  value >= 80 %}
+        style="background-color : #8DC153"
+    {% elif  value >= 66 %}
+        style="background-color : #F6BB43"
+    {% else %}
+        style="background-color : #E77E23"
+{% endif %}
+>
+{{value}}
+</span>

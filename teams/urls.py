@@ -7,5 +7,6 @@ urlpatterns = [
     path("<int:team_id>/", views.team_view),
     path("player/<int:player_id>/", views.player_view),
     path("add_game", views.update_with_game_view),
-    path("exchange_players", views.player_exchange)
+    path("exchange_players", views.player_exchange),
+    path("market", views.market_view)
 ]

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z)@f(i3vi93xvdfg4s8s(u6oc7kkhan_^%mz(ak-xwnvtj3jma'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', '.ngrok-free.app']
 
@@ -131,7 +131,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
-CSRF_TRUSTED_ORIGINS = ["https://7731-80-30-46-190.ngrok-free.app"]
+CSRF_TRUSTED_ORIGINS = ["https://ba4e-80-30-42-230.ngrok-free.app"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

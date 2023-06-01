@@ -1,0 +1,30 @@
+{% extends 'teams/_base.html' %}
+
+{% block bg-color %}
+#f0e05f
+{% endblock bg-color %}
+
+{% block content %}
+
+<div>
+{% for player in players %}
+<div class="d-flex flex-0 1 20% flex-row rounded p-1" style="background-color: white">
+    <div>{{player.name}}</div>
+    <div>    
+        {% include "teams/rating_color.html" with value=player.speed_stat_max %}
+    </div>
+</div>
+{% endfor %}
+{% for player in keepers %}
+<div class="d-flex flex-0 1 20% flex-row rounded p-1 align-items-center shadow-lg" style="background-color: white">
+    <div class="m-1"><h1>{{player.name}}</h1></div>   
+    <div>
+        <span>Posicionamiento: {% include "teams/rating_color.html" with value=player.po_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.po_stat_max %}</span>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+
+
+{% endblock content %}

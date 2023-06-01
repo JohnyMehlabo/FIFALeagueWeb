@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
-from .models import Team, Player
+from .models import Team, Player, MarketPlayer, MarketKeeper
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
@@ -88,3 +88,12 @@ def update_with_game_view(request):
                             player.save()
 
             return redirect("/")
+
+@login_required
+def market_view(request):
+    if request.user.is_superuser:
+        context = {
+            "players" : MarketPlayer.objects.filter(marketkeeper=None),
+            "keepers" : MarketKeeper.objects.all()
+        }
+        return render(request, "teams/market.html", context)
