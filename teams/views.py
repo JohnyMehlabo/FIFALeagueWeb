@@ -67,7 +67,8 @@ def update_with_game_view(request):
         else:
             params = [item for item in request.POST.items()][1:]
             for key,value in params:
-                player = Player.objects.get(name=value)
+                if value != "Ninguno":
+                    player = Player.objects.get(name=value)
                 if key == "mvp":
                     player.times_mvp = player.times_mvp + 1
                     player.save()
