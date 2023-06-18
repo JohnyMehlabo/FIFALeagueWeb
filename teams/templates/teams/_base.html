@@ -39,15 +39,15 @@
                 <li class="nav-item">
                   <a class="nav-link text-white fs-5" href="/cards">Cartas</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white fs-5" href="/teams/market">Mercato</a>
+                </li>
                 {% if user.is_superuser %}
                   <li class="nav-item">
                     <a class="nav-link text-white fs-5" href="/teams/add_game">Actualizar con partido</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-white fs-5" href="/teams/exchange_players">Intercambio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white fs-5" href="/teams/market">Mercato</a>
                   </li>
                 {% endif %}
                 <form class="d-flex" style="margin-left:auto" role="search">
