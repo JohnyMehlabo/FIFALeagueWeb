@@ -3,6 +3,7 @@ from django.contrib.postgres.fields import ArrayField
 from django import forms
 
 class Player(models.Model):
+    clausule = models.IntegerField(default=0)
     scored_goals = models.IntegerField(default=0)
     saves = models.IntegerField(null=True, blank=True)
     name = models.CharField(max_length=30)
@@ -18,6 +19,7 @@ class MarketPlayer(Player):
     weight = models.IntegerField()
     height = models.FloatField()
     image = models.CharField(max_length=40)
+    price = models.FloatField()
 
     speed_stat_min = models.IntegerField()
     dribbling_stat_min = models.IntegerField()

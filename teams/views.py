@@ -90,11 +90,14 @@ def update_with_game_view(request):
 
             return redirect("/")
 
-@login_required
 def market_view(request):
-    if request.user.is_superuser:
-        context = {
-            "players" : MarketPlayer.objects.filter(marketkeeper=None),
-            "keepers" : MarketKeeper.objects.all()
-        }
-        return render(request, "teams/market.html", context)
+    context = {
+        "players" : [MarketPlayer.objects.get(id=169), 
+                     MarketPlayer.objects.get(id=179), 
+                     MarketPlayer.objects.get(id=183),
+                     MarketPlayer.objects.get(id=178),
+                     MarketPlayer.objects.get(id=154)],
+        "keepers" : None,
+        "super_star" : Player.objects.get(name="Toni Kroos")
+    }
+    return render(request, "teams/market.html", context)

@@ -18,7 +18,11 @@
         style="background-color : #E77E23"
     {% endif %}
     >{{ player.fifa_rating }}</span>
-
+    {% if player.clausule > 0 %}
+    - {{ player.clausule }}M
+    {% else %}
+    - INTRANSFERIBLE
+    {% endif %}
 </h1>
 <h2 class="mb-3 mt-0">Posiciones: 
     {% for position in player.exact_positions %}

@@ -5,26 +5,72 @@
 {% endblock bg-color %}
 
 {% block content %}
-
+{% load static %}
 <div>
 {% for player in players %}
-<div class="d-flex flex-0 1 20% flex-row rounded p-1" style="background-color: white">
-    <div>{{player.name}}</div>
-    <div>    
-        {% include "teams/rating_color.html" with value=player.speed_stat_max %}
+<div class="m-2 d-flex flex-0 1 20% flex-row rounded p-1 align-items-center"  style="flex-wrap: wrap;background-color: white">
+    <div class="m-1 align-items-center d-flex flex-column">
+        <h1>{{player.name}}  - {{player.nacionality}}<h2 class="fw-bold">{% for position in player.exact_positions %}
+            {% if forloop.first %}
+                <span>{{position}}</span>
+            {% else %}
+                <span>/ {{position}}</span>
+            {% endif %}
+        {% endfor %}</h2>
+    </h1> 
+        <img style="width:150px" src={% static 'players/'|add:player.image %}>
+        <h2>{{player.price}} M</h2> 
+    </div> 
+    <div>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Tiro: {% include "teams/rating_color.html" with value=player.shooting_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.shooting_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Regate: {% include "teams/rating_color.html" with value=player.dribbling_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.dribbling_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Ritmo: {% include "teams/rating_color.html" with value=player.speed_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.speed_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Físico: {% include "teams/rating_color.html" with value=player.physical_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.physical_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Pase: {% include "teams/rating_color.html" with value=player.passing_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.passing_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Defensa: {% include "teams/rating_color.html" with value=player.defense_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.defense_stat_max %}</span></br>
+    {% if "dfc" in player.exact_positions|lower %}
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Entradas: {% include "teams/rating_color.html" with value=player.tackle_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.tackle_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Robos: {% include "teams/rating_color.html" with value=player.steal_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.steal_stat_max %}</span></br>
+    {% endif %}    
     </div>
 </div>
 {% endfor %}
 {% for player in keepers %}
-<div class="d-flex flex-0 1 20% flex-row rounded p-1 align-items-center shadow-lg" style="background-color: white">
-    <div class="m-1"><h1>{{player.name}}</h1></div>   
+<div class="d-flex flex-0 1 20% m-2 flex-row rounded p-1 align-items-center shadow-lg" style="flex-wrap: wrap;background-color: white">
+    <div class="m-1 align-items-center d-flex flex-column">
+        <h1>#{{player.name}} {% for position in player.exact_positions %}
+            {% if forloop.first %}
+                <span>{{position}}</span>
+            {% else %}
+                <span>/ {{position}}</span>
+            {% endif %}
+        {% endfor %} - {{player.nacionality}}</h1>
+    <img style="width:150px" src={% static 'players/'|add:player.image %}>
+    <h2>{{player.price}} M  </h2></div>   
     <div>
-        <span>Posicionamiento: {% include "teams/rating_color.html" with value=player.po_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.po_stat_max %}</span>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Posicionamiento: {% include "teams/rating_color.html" with value=player.po_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.po_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Velocidad: {% include "teams/rating_color.html" with value=player.v_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.v_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Estirada: {% include "teams/rating_color.html" with value=player.e_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.e_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Posicionamiento: {% include "teams/rating_color.html" with value=player.po_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.po_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Parada: {% include "teams/rating_color.html" with value=player.pa_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.pa_stat_max %}</span></br>
+        <br style="display: block; content: ""; margin-top: 10px;"><span>Reflejos: {% include "teams/rating_color.html" with value=player.r_stat_min %}&nbsp-&nbsp{% include "teams/rating_color.html" with value=player.r_stat_max %}</span></br>
     </div>
 </div>
 {% endfor %}
 </div>
 
-
+<div class="d-flex flex-0 1 20% m-2 flex-row rounded p-1 justify-content-center align-items-center shadow-lg" style="flex-wrap: wrap;background-color: white">
+    <div class="m-1 d-flex align-items-center d-flex flex-column justify-content-center">
+        <h1 class="fw-bold">Jugador estrella:</h1>
+        <h1>{{super_star.name}} - {% include "teams/rating_color.html" with value=super_star.fifa_rating %} {% for position in player.exact_positions %}
+            {% if forloop.first %}
+                <span>{{position}}</span>
+            {% else %}
+                <span>/ {{position}}</span>
+            {% endif %}
+            
+        {% endfor %}</h1>
+    <h2>22.0 M  </h2></div>   
+</div>
 
 {% endblock content %}

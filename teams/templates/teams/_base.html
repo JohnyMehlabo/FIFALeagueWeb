@@ -10,7 +10,7 @@
     {% bootstrap_javascript %}
     {% bootstrap_css %}
     {% load bootstrap_icons %}
-    <title>{% block title %}{% endblock %}</title>
+    <title>FIFA League{% block title %}{% endblock %}</title>
 </head>
 
 <body style="background-color: {% block bg-color %}{% endblock bg-color %}">
@@ -46,7 +46,9 @@
                   <li class="nav-item">
                     <a class="nav-link text-white fs-5" href="/teams/exchange_players">Intercambio</a>
                   </li>
-
+                  <li class="nav-item">
+                    <a class="nav-link text-white fs-5" href="/teams/market">Mercato</a>
+                  </li>
                 {% endif %}
                 <form class="d-flex" style="margin-left:auto" role="search">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

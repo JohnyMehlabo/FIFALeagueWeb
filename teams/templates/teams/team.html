@@ -12,25 +12,33 @@
             <ul style="flex: 0 1 22%" class="list-group m-2">
                 <li class="list-group-item fw-bold active">Porteros:</li>
                 {% for player in goalkeepers %}  
-                    <li class="list-group-item"><a class="text-decoration-none text-black" href="/teams/player/{{ player.id }}">{{ player.name }}</a></li>
+                    <li class="list-group-item"><a class="text-decoration-none text-black" href="/teams/player/{{ player.id }}">{{ player.name }}{% if player.clausule > 0 %}
+                        - {{ player.clausule }}M
+                        {% endif %}</a></li>
                 {% endfor %}
             </ul>
             <ul style="flex: 0 1 22%" class="list-group m-2">
                 <li class="list-group-item fw-bold active">Defensas:</li>
                 {% for player in defenders %}  
-                    <li class="list-group-item"><a class="text-decoration-none text-black" href="/teams/player/{{ player.id }}">{{ player.name }}</a></li>
+                    <li class="list-group-item"><a class="text-decoration-none text-black" href="/teams/player/{{ player.id }}">{{ player.name }}{% if player.clausule > 0 %}
+                        - {{ player.clausule }}M
+                        {% endif %}</a></li>
                 {% endfor %}
             </ul>
             <ul style="flex: 0 1 22%" class="list-group m-2 ">
                 <li class="list-group-item fw-bold active">Mediocentros:</li>
                 {% for player in midfielders %}  
-                    <li class="list-group-item"><a class="text-decoration-none text-black" href="/teams/player/{{ player.id }}">{{ player.name }}</a></li>
+                    <li class="list-group-item"><a class="text-decoration-none text-black" href="/teams/player/{{ player.id }}">{{ player.name }}{% if player.clausule > 0 %}
+                        - {{ player.clausule }}M
+                        {% endif %}</a></li>
                 {% endfor %}
             </ul>
             <ul style="flex: 0 1 22%" class="list-group m-2 ">
                 <li class="list-group-item fw-bold active">Atacantes:</li>
                 {% for player in atackers %}  
-                    <li class="list-group-item"><a class="text-decoration-none text-black" href="/teams/player/{{ player.id }}">{{ player.name }}</a></li>
+                    <li class="list-group-item"><a class="text-decoration-none text-black" href="/teams/player/{{ player.id }}">{{ player.name }}{% if player.clausule > 0 %}
+                        - {{ player.clausule }}M
+                        {% endif %}</a></li>
                 {% endfor %}
             </ul>
         </div>
