@@ -102,7 +102,7 @@ def market_view(request):
                      MarketPlayer.objects.get(id=132),
                      MarketPlayer.objects.get(id=175),
                      MarketPlayer.objects.get(id=115)],
-        "keepers" : []
+        "keepers" : [],
         "super_star" : Player.objects.get(name="Jadon Sancho")
     }
     return render(request, "teams/market.html", context)
