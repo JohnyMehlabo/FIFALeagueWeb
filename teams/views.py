@@ -92,10 +92,10 @@ def update_with_game_view(request):
 
 def market_view(request):
     context = {
-        "players" : [MarketPlayer.objects.get(id=116),  
+        "players" : [MarketPlayer.objects.get(id=120),  
                      MarketPlayer.objects.get(id=137),
                      MarketPlayer.objects.get(id=150),
-                     MarketPlayer.objects.get(id=152),
+                     MarketPlayer.objects.get(id=166),
                      MarketPlayer.objects.get(id=155),
                      MarketPlayer.objects.get(id=167),
                      MarketPlayer.objects.get(id=164),
