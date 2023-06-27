@@ -97,7 +97,7 @@ def market_view(request):
                      MarketPlayer.objects.get(id=119),
                      MarketPlayer.objects.get(id=125),
                      MarketPlayer.objects.get(id=135),
-                     MarketPlayer.objects.get(id=127)],
+                     MarketPlayer.objects.get(id=156)],
         "keepers" : [],
         "super_star" : Player.objects.get(name="Lucas Paqueta")
     }
