@@ -92,6 +92,7 @@ def update_with_game_view(request):
 
 def market_view(request):
     context = {
+<<<<<<< HEAD
         "players" : [MarketPlayer.objects.get(id=165), 
                      MarketPlayer.objects.get(id=176), 
                      MarketPlayer.objects.get(id=181),
@@ -99,5 +100,15 @@ def market_view(request):
         ],
         "keepers" : [MarketKeeper.objects.get(id=114)],
         "super_star" : Player.objects.get(name="Aaron Wan-Bissaka")
+=======
+        "players" : [
+                     MarketPlayer.objects.get(id=189),
+                     MarketPlayer.objects.get(id=187),
+                     MarketPlayer.objects.get(id=186),
+                     MarketPlayer.objects.get(id=184),
+                     MarketPlayer.objects.get(id=140)],
+        "keepers" : [],
+        "super_star" : Player.objects.get(name="Anthony Martial")
+>>>>>>> 317b6d7b2750764f45d3816483b15334ba4b0bc1
     }
     return render(request, "teams/market.html", context)
