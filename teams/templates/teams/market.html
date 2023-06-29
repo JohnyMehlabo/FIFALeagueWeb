@@ -38,7 +38,7 @@
 {% for player in keepers %}
 <div class="d-flex flex-0 1 20% m-2 flex-row rounded p-1 align-items-center shadow-lg" style="flex-wrap: wrap;background-color: white">
     <div class="m-1 align-items-center d-flex flex-column">
-        <h1>#{{player.name}} {% for position in player.exact_positions %}
+        <h1>{{player.name}} {% for position in player.exact_positions %}
             {% if forloop.first %}
                 <span>{{position}}</span>
             {% else %}
