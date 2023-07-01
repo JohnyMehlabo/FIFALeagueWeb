@@ -96,7 +96,7 @@ def market_view(request):
                      MarketPlayer.objects.get(id=139), 
                      MarketPlayer.objects.get(id=182),
                      MarketPlayer.objects.get(id=180),
-                     MarketPlayer.objects.get(id=130),
+                     MarketPlayer.objects.get(id=131),
         ],
         "super_star" : Player.objects.get(name="Marc-Andre Ter Stegen")
     }
